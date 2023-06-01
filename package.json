@@ -1,0 +1,8 @@
+{
+  "name": "github-actions-front-end",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:felipemarinhodev/github-actions-front-end.git",
+  "author": "felipemarinhodev <felipmarinho@gmail.com>",
+  "license": "MIT"
+}
