@@ -5,9 +5,9 @@ on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   # Ativa esse fluxo de trabalho para cada push ou pull request que acontecer apontando para a branch main
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    types: [opened, synchronize]
 
 # Definindo o que queremos executar
 jobs:
