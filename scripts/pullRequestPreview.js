@@ -17,6 +17,8 @@ console.log("[GITHUB_COMMENT]: START");
 
 const { GITHUB_TOKEN, GITHUB_REPOSITORY, GITHUB_PR_NUMBER } = process.env;
 
+console.log("🔑 GITHUB_TOKEN", GITHUB_TOKEN);
+
 const GH_COMMENT = `
 - Deploy URL: [${DEPLOY_URL}] (${DEPLOY_URL})
 `;
