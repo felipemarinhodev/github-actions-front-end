@@ -17,10 +17,6 @@ console.log("[GITHUB_COMMENT]: START");
 
 const { GITHUB_TOKEN, GITHUB_REPOSITORY, GITHUB_PR_NUMBER } = process.env;
 
-const lalala = process.env;
-
-console.log("🔑 lalala", lalala);
-
 const GH_COMMENT = `
 - Deploy URL: [${DEPLOY_URL}] (${DEPLOY_URL})
 `;
@@ -28,19 +24,16 @@ const GH_COMMENT = `
 console.log("GITHUB_REPOSITORY", GITHUB_REPOSITORY);
 console.log("GITHUB_PR_NUMBER", GITHUB_PR_NUMBER);
 
-const defaultHeaders = {};
-defaultHeaders["authorization"] = `token ${GITHUB_TOKEN}`;
-defaultHeaders["accept"] =
+const headers = {};
+headers["authorization"] = `token ${GITHUB_TOKEN}`;
+headers["accept"] =
   "application/vnd.github.v3+json; application/vnd.github.antiope-preview+json";
-defaultHeaders["content-type"] = "application/json";
+headers["content-type"] = "application/json";
 
 const url = `https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${GITHUB_PR_NUMBER}/comments`;
-console.log("url", url);
-
-console.log("defaultHeaders", defaultHeaders);
 
 fetch(url, {
-  headers: defaultHeaders,
+  headers,
   method: "POST",
   body: JSON.stringify({
     body: GH_COMMENT,
