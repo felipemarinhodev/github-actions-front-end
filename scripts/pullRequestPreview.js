@@ -30,16 +30,18 @@ defaultHeaders["accept"] =
   "application/vnd.github.v3+json; application/vnd.github.antiope-preview+json";
 defaultHeaders["content-type"] = "application/json";
 
-fetch(
-  `https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${GITHUB_PR_NUMBER}/comments`,
-  {
-    headers: defaultHeaders,
-    method: "POST",
-    body: JSON.stringify({
-      body: GH_COMMENT,
-    }),
-  }
-)
+const url = `https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${GITHUB_PR_NUMBER}/comments`;
+console.log("url", url);
+
+console.log("defaultHeaders", defaultHeaders);
+
+fetch(url, {
+  headers: defaultHeaders,
+  method: "POST",
+  body: JSON.stringify({
+    body: GH_COMMENT,
+  }),
+})
   .then((response) => {
     if (response.ok) {
       return response.json();
