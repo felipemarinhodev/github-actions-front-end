@@ -40,7 +40,7 @@ fetch(url, {
   }),
 })
   .then((response) => {
-    console.log("[COMMENT_ON_GITHUB: START]");
+    console.log("[COMMENT_ON_GITHUB: START]", response);
     if (response.ok) {
       return response.json();
     }
