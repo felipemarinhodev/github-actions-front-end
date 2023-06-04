@@ -11,7 +11,8 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "deploy:prod": "yarn build && vercel ./build --confirm --no-clipboard --token=$VERCEL_TOKEN --prod"
+    "deploy:prod": "yarn build && vercel ./build --confirm --no-clipboard --token=$VERCEL_TOKEN --prod",
+    "deploy:preview": "node ./scripts/pullRequestPreview"
   },
   "dependencies": {
     "next": "^13.4.4",
