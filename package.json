@@ -1,5 +1,6 @@
 {
   "name": "github-actions-front-end",
+  "type": "module",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:felipemarinhodev/github-actions-front-end.git",
@@ -11,7 +12,9 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "deploy:prod": "yarn build && vercel ./build --confirm --no-clipboard --token=$VERCEL_TOKEN --prod"
+    "deploy:staging": "yarn build && vercel ./build --confirm --no-clipboard --token=$VERCEL_TOKEN",
+    "deploy:prod": "yarn deploy:staging --prod",
+    "deploy:preview": "node ./scripts/pullRequestPreview"
   },
   "dependencies": {
     "next": "^13.4.4",
