@@ -35,12 +35,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18.14.2
-          cache: yarn
+          cache: "yarn"
       - name: Cypress
         uses: cypress-io/github-action@v4
         with:
           browser: chrome
-      - name: Run Installation
-        run: yarn install
-      - name: Run test e2e
-        run: yarn test:e2e
